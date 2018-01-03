@@ -1,0 +1,97 @@
+
+
+
+<!--======= header =======-->
+<header>
+  <div class="container-full">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-12">
+        <a id="main-category-toggler" class="hidden-md hidden-lg hidden-md" href="#"> <i class="fa fa-navicon"></i> </a>
+        <a id="main-category-toggler-close" class="hidden-md hidden-lg hidden-md" href="#"> <i class="fa fa-close"></i> </a>
+        <div id="logo">
+          <a routerLink="/home/media"><img [src]="logo2" alt=""></a>
+        </div>
+      </div>
+      <!-- // col-md-2 -->
+      <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs hidden-sm"> </div>
+      <!-- // col-md-3 -->
+      <div class="col-lg-3 col-md-3 col-sm-5 hidden-xs hidden-sm"> </div>
+      <!-- // col-md-4 -->
+      <div class="col-lg-2 col-md-2 col-sm-3 pull-right hidden-xs hidden-sm">
+        <div class="dropdown">
+          <a data-toggle="dropdown" href="#" class="user-area">
+            <div class="thumb"><img [src]="userImg" alt=""></div>
+            <h2>User 1</h2>
+            <i class="fa fa-angle-down"></i> </a>
+          <ul class="dropdown-menu account-menu">
+            <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-video-camera color-2"></i>add video</a></li>
+            <li><a routerLink="" (click)="logout()"><i class="fa fa-sign-out color-4"></i>sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- // row -->
+  </div>
+  <!-- // container-full -->
+</header>
+<!-- // header -->
+<div id="main-category">
+  <div class="container-full">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="main-category-menu">
+          <li class="color-1"><a routerLink="/home/media"><i class="fa fa-play-circle-o"></i>All videos</a></li>
+          <li class="color-2"><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-upload"></i>Upload new</a></li>
+        </ul>
+      </div>
+      <!-- // col-md-14 -->
+    </div>
+    <!-- // row -->
+  </div>
+  <!-- // container-full -->
+</div>
+<!-- // main-category -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form name="form" role="form" (ngSubmit)="f.form.valid && upload()" #f="ngForm" novalidate>
+      <div class="modal-header" style="padding:35px 50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2> Add new video</h2> </div>
+      <div class="modal-body" style="padding:40px 50px;">
+
+
+          <div class="form-group">
+            <label > Select your video</label>
+            <div class="form-group">
+              <input type="file" name="img[]" class="file" (change)="fileChange($event)">
+              <div class="input-group"> <span class="input-group-addon"></span>
+                <input type="text" class="form-control input-lg" disabled placeholder="Upload Image"> <span class="input-group-btn">
+        <button class="browse btn btn-primary input-lg" type="button"> Browse</button>
+      </span> </div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <h2>Uploading progress</h2>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': progress+'%' }"> {{progress}}% </div>
+            </div>
+          </div>
+          <br>
+        <br> </div>
+      <div class="modal-footer">
+        <div class="col-md-3 pull-right">
+          <button type="submit" class="btn btn-dark btn-gradient dark btn-block" style="color:white;"> Confirm</button>
+        </div>
+        <div class="col-md-3 pull-left">
+          <button type="submit" class="btn btn-danger btn-gradient danger btn-block" data-dismiss="modal"><span class="glyphicon"></span> Close</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

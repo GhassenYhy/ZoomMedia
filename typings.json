@@ -1,0 +1,10 @@
+{
+  "name": "drive-safe-v3",
+  "dependencies": {
+    "debug": "registry:npm/debug#2.0.0+20170504163145",
+    "tape": "registry:npm/tape#4.0.0+20160723033700"
+  },
+  "globalDependencies": {
+    "azuremediaplayer": "file:azuremediaplayer.d.ts"
+  }
+}

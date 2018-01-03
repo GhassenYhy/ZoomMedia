@@ -1,0 +1,20 @@
+
+<div class="col-md-8 col-md-offset-2" style="background-color:white;">
+  <div class="row" style="margin-top:20px;">
+    <!-- video-item -->
+    <div  class="col-lg-3 col-md-4 col-sm-6" *ngFor="let video of videos" (click)="redirect(video._id)">
+      <div class="video-item" >
+        <div class="thumb" >
+          <div class="hover-efect"></div> <small class="time">10:53</small>
+          <a [routerLink]=""><img src="https://picsum.photos/200/300/?random" alt=""></a>
+        </div>
+        <div class="video-info"> <a [routerLink]="" class="title">{{video.Title}} </a> <a class="channel-name" href="#">{{(video.Transcript.length > 40)? (video.Transcript| slice:0:40)+'...':(video.Transcript)}}<span>
+                            </span></a> <span class="views"><i class="fa fa-eye"></i>2.8M views </span> <span class="date"><i class="fa fa-clock-o"></i>5 months ago </span> </div>
+      </div>
+    </div>
+    <!-- // video-item -->
+
+
+  </div>
+</div>
+

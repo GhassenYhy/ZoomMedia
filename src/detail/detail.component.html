@@ -1,0 +1,89 @@
+
+
+<div class="site-output col-lg-10 col-lg-offset-2">
+  <!-- Watch -->
+  <div  class="col-md-10 col-md-offset-1" style="margin-left=0px;margin-left: 0px;">
+    <div id="watch">
+
+      <!-- Video Player -->
+      <h1 *ngIf="video" class="video-title">{{video.Title}}</h1>
+      <div class="video-code" style="width: 1000px">
+        <video id="vid1" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="0"></video>
+      </div><!-- // video-code -->
+
+
+
+      <div class="video-share">
+
+        <p *ngIf="video" class="video-transcript">{{video.Transcript}}</p>
+
+        <button href="#" data-toggle="modal" data-target="#myModal2">edit transcript</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal2" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <form name="form" role="form" (ngSubmit)="f.form.valid && editTr()" #f="ngForm" novalidate>
+                <div class="modal-header" style="padding:35px 50px;">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h2> Edit transcript</h2> </div>
+                <div class="modal-body" style="padding:40px 50px;">
+
+
+                  <div >
+                    <label > Transcript</label>
+                    <div class="form-group">
+                      <textarea name="transcript" id="transcript" *ngIf="video" class="form-group" style="width: 410px" [(ngModel)]="video.Transcript" #transcript="ngModel"> </textarea>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <div class="col-md-3 pull-right">
+                    <button id="button5" type="submit" class="btn btn-dark btn-gradient dark btn-block" style="color:white;" > Confirm</button>
+                  </div>
+                  <div class="col-md-3 pull-left">
+                    <button type="submit" class="btn btn-danger btn-gradient danger btn-block" data-dismiss="modal"><span class="glyphicon"></span> Close</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- // Video Player -->
+
+
+      <!-- Chanels Item -->
+      <div class="chanel-item">
+        <div class="chanel-thumb">
+          <a href="#"><img [src]="userImg2" alt=""></a>
+        </div>
+        <div class="chanel-info">
+          <a class="title" href="#">User1</a>
+
+        </div>
+
+      </div>
+
+
+    </div><!-- // watch -->
+  </div><!-- // col-md-8 -->
+  <!-- // Watch -->
+
+
+  <!-- // Related Posts -->
+</div><!-- // row -->
+
+
+
+
+
+
+
+
+
